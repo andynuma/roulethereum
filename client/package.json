@@ -1,0 +1,35 @@
+{
+  "name": "roulette-ethereum",
+  "version": "1.0.0",
+  "license": "ISC",
+  "description": "Roulette on Ethereum",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "npm run artifacts && yarn start",
+    "mc":"truffle compile -all && truffle migrate --reset",
+    "artifacts": "cp -r ../build/contracts/ ./src/contracts",
+    "start": "react-scripts start && npm run artifacts",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "antd": "^3.12.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "^2.1.5",
+    "react-toastify": "^4.4.3",
+    "truffle-contract": "^3.0.6",
+    "truffle-hdwallet-provider": "^1.0.2",
+    "web3": "1.0.0-beta.37"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
