@@ -11,7 +11,7 @@
     "dev": "npm run artifacts && yarn start",
     "mc": "truffle compile -all && truffle migrate --reset",
     "artifacts": "cp -r ../build/contracts/ ./src/contracts",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
