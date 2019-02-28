@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "firebase-tools": "^6.4.0",
     "truffle-hdwallet-provider": "^1.0.4"
   }
 }

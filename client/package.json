@@ -14,10 +14,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "antd": "^3.12.3",
@@ -31,7 +28,6 @@
     "truffle-hdwallet-provider": "^1.0.2",
     "web3": "1.0.0-beta.37"
   },
-  "homepage": "https://andynuma.github.io/roulethereum/",
   "browserslist": [
     ">0.2%",
     "not dead",
