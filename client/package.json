@@ -11,7 +11,8 @@
     "dev": "npm run artifacts && yarn start",
     "mc":"truffle compile -all && truffle migrate --reset",
     "artifacts": "cp -r ../build/contracts/ ./src/contracts",
-    "start": "react-scripts start && npm run artifacts",
+    "start": "node index.js",
+    "postinstall":"gulp browserify",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -26,6 +27,7 @@
     "truffle-hdwallet-provider": "^1.0.2",
     "web3": "1.0.0-beta.37"
   },
+  "homepage" : "https://andynuma.github.io/roulethereum/",
   "browserslist": [
     ">0.2%",
     "not dead",

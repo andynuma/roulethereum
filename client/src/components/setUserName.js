@@ -21,9 +21,9 @@ class SetUserName extends React.Component{
     render(){
         return(
             <div>
-                <h2>SetUserName</h2>
+                {/* <p>SetUserName</p> */}
                 <form onSubmit={this.handleSubmit}>
-                    <input value={this.state.name} onChange={this.handleChange} />
+                    <input value={this.state.name} onChange={this.handleChange} placeholder="Candicate's name" />
                     <input type="submit" value="Add" />
                 </form>
             </div>

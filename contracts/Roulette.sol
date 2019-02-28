@@ -25,15 +25,7 @@ contract Roulette is Owned{
 
     uint public test = 10;
 
-    // userAddress => make Randome Number Times
-    // user can make random number only once
     mapping(address => uint ) public makeRandomNumberTimes;
-
-    // set candidate
-    //TODO:onlyOwnerを消すこと
-    // function setUserName(string memory _userNames) public {
-    //     userNames.push(_userNames);
-    // }
 
     function setUserName(string[] memory _users) public returns(string[] memory){
         for(uint i=0;i<_users.length;i++){
@@ -46,6 +38,14 @@ contract Roulette is Owned{
         return test;
     }
 
+    function setTest(uint  _value) public  {
+        test = _value;
+    }
+
+    function getUserNames() public returns(string[] memory){
+        return userNames;
+    }
+
     // NOTE : this function uses blockhash and it is NOT secure !
     function generateRandomNumber() public returns(uint){
         //TODO:テストのためにrequireをコメントアウトしているので戻す事
@@ -55,10 +55,12 @@ contract Roulette is Owned{
         uint userNumber = userNames.length;
         bytes32 blockhash = blockhash(block.number - 1);
         uint myWinner = uint(blockhash) % (userNumber+1);
-        
-        //TODO:配列のあたいの値の入ってない部分がwinnerになるとエラーになる
         winner = myWinner;
         return winner;
+    }
+
+    function getCount(address _address) public returns(uint){
+        return makeRandomNumberTimes[msg.sender];
     }
 
     // return wineer name
@@ -68,5 +70,9 @@ contract Roulette is Owned{
 
     function viewUsers() public view returns(uint){
         return userNames.length;
+    }
+
+    function getWinner() public view returns(uint){
+        return winner;
     }
 }
