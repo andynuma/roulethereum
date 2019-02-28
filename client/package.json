@@ -9,13 +9,13 @@
   },
   "scripts": {
     "dev": "npm run artifacts && yarn start",
-    "mc":"truffle compile -all && truffle migrate --reset",
+    "mc": "truffle compile -all && truffle migrate --reset",
     "artifacts": "cp -r ../build/contracts/ ./src/contracts",
-    "start": "node index.js",
-    "postinstall":"gulp browserify",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "antd": "^3.12.3",
@@ -23,11 +23,12 @@
     "react-dom": "^16.6.3",
     "react-scripts": "^2.1.5",
     "react-toastify": "^4.4.3",
+    "serve": "^10.1.2",
     "truffle-contract": "^3.0.6",
     "truffle-hdwallet-provider": "^1.0.2",
     "web3": "1.0.0-beta.37"
   },
-  "homepage" : "https://andynuma.github.io/roulethereum/",
+  "homepage": "https://andynuma.github.io/roulethereum/",
   "browserslist": [
     ">0.2%",
     "not dead",
